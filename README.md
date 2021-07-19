@@ -25,17 +25,37 @@
 
 ## Быстрый старт
 Чтобы запустить проект локально на вашем компьютере: 
-1. Настройте среду разработки Python. 
+1. Настройте среду разработки Python.
+1. Склонируйте репозиторий:
+```git clone https://github.com/DaryaBatova/test-web-service``` 
 1. Выполните следующие команды: 
     * установите все необходимые зависимости   
-    ```pip install -r requirements.txt ```
+    ```
+    pip install -r requirements.txt 
+    ```
     * создайте файл с именем `.env`, расположив его по пути `service/service/.env`, и скопируйте в него конфигурации приложения из файла `service/service/.env.example`
-    * создайте миграции для всех приложений   
-    ```python manage.py makemigrations```
+    * создайте миграции для приложения `api`
+    ```
+    python manage.py makemigrations api
+    ```
     * примените созданные миграции к базе    
-    ```python manage.py migrate```
+    ```
+    python manage.py migrate
+    ```
+   * (опционально) запустите тесты
+    ```
+    python manage.py test
+    ```
     * запустите сервер   
-    ```python manage.py runserver```
-    * (опционально) запустите тесты
-    ```python manage.py test```
+    ```
+    python manage.py runserver
+    ```
+    
 1. Используя описание разработанного API из `documentation.md`, выполните необходимые запросы.
+Например:
+```
+http --json POST http://127.0.0.1:8000/page/ url="http://google.com"
+```
+```
+http http://127.0.0.1:8000/page/1/
+```
