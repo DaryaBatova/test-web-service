@@ -34,9 +34,9 @@
     pip install -r requirements.txt 
     ```
     * создайте файл с именем `.env`, расположив его по пути `service/service/.env`, и скопируйте в него конфигурации приложения из файла `service/service/.env.example`
-    * создайте миграции для приложения `api`
+    * создайте миграции для всех приложений
     ```
-    python manage.py makemigrations api
+    python manage.py makemigrations
     ```
     * примените созданные миграции к базе    
     ```
